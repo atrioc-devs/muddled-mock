@@ -57,9 +57,9 @@ async def mock_handler(websocket):
     """WebsocketServer handler"""
     asyncio.create_task(ping(websocket))
     async for message in websocket:
-        if message == "PING :tmi.twitch.tv":
+        if message == "PING :tmi.twitch.tv\r\n":
             await send(websocket, "PONG :tmi.twitch.tv")
-        elif message == f"JOIN #{TWITCH_CHANNEL}":
+        elif message == f"JOIN #{TWITCH_CHANNEL}\r\n":
             for chat_message in read_log(TWITCH_CHANNEL, CHAT_LOG):
                 await asyncio.sleep(1)
                 await send(websocket, chat_message)
