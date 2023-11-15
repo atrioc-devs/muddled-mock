@@ -23,6 +23,6 @@ time,user_name,user_color,message
 # Setup
 
 ```sh
-docker run -p 8765:8765 -e PORT=8765,CHANNEL=atriocdevs -v $PWD/sample:/opt/app/sample ghcr.io/atrioc-devs/muddled-mock:latest
+docker run -p 8765:8765 -e CHANNEL=atriocdevs -v $PWD/sample:/opt/app/sample ghcr.io/atrioc-devs/muddled-mock:latest
 ```
 
